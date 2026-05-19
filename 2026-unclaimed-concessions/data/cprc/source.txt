@@ -1,0 +1,21 @@
+CPRC Mind the Gap Report — source provenance
+
+Title:    Mind the Gap – Identifying the gap between energy concession
+          eligibility and concessions received
+Author:   Ben Martin Hobbs
+Publisher: Consumer Policy Research Centre (CPRC)
+Date:     November 2022 (Update 2022-11-09: ACT figure revised 41% → 31%)
+
+Landing page: https://cprc.org.au/report/mind-the-gap/
+PDF URL:      https://cprc.org.au/wp-content/uploads/2022/11/Mind-the-Gap_Report_Update-1011.pdf
+Retrieved:    2026-05-19 (local time, Taxlite Research Pilot)
+Local copy:   report/data/cprc/mind-the-gap-2022.pdf
+PDF version:  1.4, 22 pages, 996,775 bytes
+
+Verification:
+  shasum -a 256 report/data/cprc/mind-the-gap-2022.pdf
+  (capture during commit; included in INPUTS.md)
+
+CPRC media contact: media@cprc.org.au
+CPRC is an independent consumer think-tank funded by the Victorian Government.
+d334df42c3df3f3b98e2bc032015814b428be0194c1105839b89c6862a0c9843  report/data/cprc/mind-the-gap-2022.pdf

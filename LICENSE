@@ -1,0 +1,37 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+============================================================
+
+Copyright (c) 2026 Alex Jiang / Taxlite (taxlite.net)
+
+This work is licensed under the Creative Commons Attribution 4.0 International
+License. To view a copy of this license, visit:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material for any purpose,
+    even commercially.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+
+  - No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing
+    anything the license permits.
+
+Recommended citation
+--------------------
+Jiang, A. (2026). At least $356.9 million in unclaimed state concessions a year
+— first systematic Australia-wide dollar estimate. Taxlite Research Report v1.
+Available at https://github.com/jiangzhengqiao/taxlite-research
+
+Third-party content
+-------------------
+Source documents included in this repository for provenance (under each
+report's `data/` subdirectory) retain their original licenses. See the
+respective `source.txt` files in:
+  - 2026-unclaimed-concessions/data/cprc/  (CPRC Mind the Gap, 2022)

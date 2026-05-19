@@ -1,0 +1,9 @@
+jurisdiction,framework,utility,unclaimed_rate,received_rate,eligible_cards,eligible_households,published_claimed,quarter,page
+NSW,NECF,electricity,0.35,0.65,1783270,1248289,814313,2021-22 Q3,11
+QLD,NECF,electricity,0.29,0.71,1251305,875914,620614,2021-22 Q3,11
+SA,NECF,electricity,0.38,0.62,486527,340569,210584,2021-22 Q3,11
+TAS,NECF,electricity,0.19,0.81,164726,115308,93889,2021-22 Q3,11
+ACT,NECF,electricity,0.31,0.69,59135,41407,28505,2021-22 Q3,11
+VIC,Victoria_DFFH,electricity,0.07,0.93,1414194,989936,924888,2021-22,13
+VIC,Victoria_DFFH,gas,0.12,0.88,1414194,752351,658831,2021-22,13
+VIC,Victoria_DFFH,water,0.22,0.78,1414194,871143,680191,2021-22,13

@@ -1,0 +1,83 @@
+{
+  "rule_id": "AU_VIC_WINTER_GAS_CONCESSION",
+  "cluster_id": "VIC Gas Concession",
+  "jurisdiction": "VIC",
+  "utility": "gas",
+  "computed_at": "2026-05-19T08:08:52.148713+00:00",
+  "inputs": {
+    "amount_per_year_aud": 80.0,
+    "amount_type_label": "percentage_imputed",
+    "amount_source": "17.5% × typical winter (May–Oct) VIC concession-household gas bill, annualised — winter ≈ 50% of annual gas usage; CPRC retailer reporting basis",
+    "eligible_cards": 1414194,
+    "eligible_households": 752351,
+    "dedup_factor": 0.532,
+    "dedup_factor_source": "CPRC Mind the Gap endnote 14, p20 — ((100/(1+x*R))+((100/(1+x*R)*R)))/100, x=2, R=42/58=0.72",
+    "unclaimed_rate": 0.12,
+    "unclaimed_rate_source": "CPRC Mind the Gap Figure 5, p13, Victoria_DFFH 2021-22",
+    "cprc_data_quarter": "2021-22",
+    "cprc_framework": "Victoria_DFFH",
+    "card_types_included": [
+      "pensioner_concession_card",
+      "health_care_card",
+      "dva_gold_card (generic)"
+    ]
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "eligible_cards",
+      "value": 1414194,
+      "source": "CPRC Fig 2 p11 (DSS June 2022 + DVA March 2022)"
+    },
+    {
+      "step": 2,
+      "name": "eligible_households",
+      "value": 752351,
+      "formula": "eligible_cards × 0.532 (CPRC weighting)",
+      "verify": 989935.7999999999
+    },
+    {
+      "step": "2b",
+      "name": "effective_eligible_households",
+      "value": 752351,
+      "formula": "eligible_households × trigger_rate 1.0",
+      "trigger_rate_basis": "n/a (full eligible cohort)"
+    },
+    {
+      "step": 3,
+      "name": "unclaimed_households",
+      "value": 90282,
+      "formula": "effective_eligible_households × 0.12"
+    },
+    {
+      "step": 4,
+      "name": "unclaimed_total_aud",
+      "value": 7222560,
+      "formula": "unclaimed_households × $80.0"
+    }
+  ],
+  "manual_check": {
+    "expected_aud_low": 6500000,
+    "expected_aud_high": 8500000,
+    "rationale": "752,351 VIC eligible households × 0.12 gap × $80 imputed ≈ $7.2M",
+    "actual_aud": 7222560,
+    "within_range": true
+  },
+  "sources": {
+    "cprc_citation": "Consumer Policy Research Centre (CPRC), Mind the Gap — Identifying the gap between energy concession eligibility and concessions received, November 2022. Author: Ben Martin Hobbs.",
+    "cprc_landing": "https://cprc.org.au/report/mind-the-gap/",
+    "cprc_pdf": "https://cprc.org.au/wp-content/uploads/2022/11/Mind-the-Gap_Report_Update-1011.pdf",
+    "cprc_local_pdf": "report/data/cprc/mind-the-gap-2022.pdf",
+    "dss_data_quarter": "DSS Payment Demographic Data, June 2022 (per CPRC endnote 10) + DVA Treatment Population, March 2022",
+    "dss_data_url": "https://data.gov.au/data/dataset/dss-payment-demographic-data",
+    "rule_yaml_path": "rules/vic/energy.yaml",
+    "corroboration_source": "Same-source self-corroboration only — DHHS 2015 survey reported 74% gas concession receive-rate (= 26% gap), notably higher than CPRC's 12% — methodology divergence acknowledged by CPRC."
+  },
+  "disclosures": [
+    "Pilot uses CPRC's already-aggregated eligible household count, not a separate DSS pull, for 100% same-quarter same-source comparability with the gap rate.",
+    "Percentage rule, winter only (1 May – 31 Oct). 752,351 households reflects CPRC's 0.76 secondary weighting (76% mains-gas connection rate, ENA 2021). Cluster also contains Excess Gas (formula) variant.",
+    "0.70 dedup weighting assumes x=2 (cards per multi-card household); CPRC acknowledges 'possible, even likely, that there may be three or more' → 0.70 may overestimate households → final AUD likely underestimated (conservative).",
+    "CPRC adopted limited eligibility criteria to avoid household-level double counting → 'actual gap... may be greater' (CPRC p8).",
+    "EBRF (federal Energy Bill Relief Fund) does NOT substitute for state-level concessions. State LIHR's 35% unclaimed rate is structural take-up gap, independent of EBRF."
+  ]
+}

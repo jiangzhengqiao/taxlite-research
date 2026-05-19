@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>At least $356.9M in unclaimed state concessions a year — Taxlite Research v1</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm;
+  }
+  :root {
+    --accent: #1f3a5f;       /* navy — policy-research convention */
+    --ink: #1a1a1a;
+    --ink-soft: #555;
+    --rule: #1a1a1a;
+    --rule-soft: #cccccc;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: var(--ink);
+    font-family: 'Charter', 'Iowan Old Style', 'Georgia', 'Source Serif Pro', serif;
+    font-size: 11.5px;
+    line-height: 1.42;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* On-screen container — A4-like preview width when viewed in browser */
+  body { padding: 14mm 16mm; max-width: 210mm; margin: 0 auto; }
+  @media print { body { padding: 0; max-width: none; } }
+
+  /* === Header — title + byline === */
+  header.masthead {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: end;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: 0.6pt solid var(--rule);
+    margin-bottom: 14px;
+  }
+  header.masthead .title-block .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Inter', sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 4px 0;
+  }
+  header.masthead .title-block h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 0;
+  }
+  header.masthead .byline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-size: 9px;
+    line-height: 1.5;
+    text-align: right;
+    color: var(--ink-soft);
+  }
+  header.masthead .byline strong { color: var(--ink); font-weight: 600; }
+  header.masthead .byline a { color: var(--ink-soft); text-decoration: none; }
+
+  /* === Headline number === */
+  .headline {
+    text-align: left;
+    margin: 10px 0 4px;
+  }
+  .headline .figure {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Inter', sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.018em;
+    color: var(--accent);
+  }
+  .headline .figure-unit {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-left: 4px;
+  }
+  .headline .caption {
+    font-family: 'Charter', 'Iowan Old Style', 'Georgia', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink);
+    margin-top: 6px;
+    max-width: 145mm;
+    line-height: 1.4;
+  }
+  .headline .caption .small { color: var(--ink-soft); font-style: normal; font-size: 11px; }
+  .headline .vintage {
+    font-family: 'Charter', 'Iowan Old Style', 'Georgia', serif;
+    font-size: 10.5px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin-top: 6px;
+    max-width: 165mm;
+    padding-left: 10px;
+    border-left: 0.5pt solid var(--rule-soft);
+  }
+
+  /* === Section headings === */
+  h2.section {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 8px 0 4px;
+    padding-bottom: 3px;
+    border-bottom: 0.3pt solid var(--rule-soft);
+  }
+
+  /* === Key findings === */
+  ul.findings {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.findings li {
+    margin: 0 0 2px 0;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.32;
+  }
+  ul.findings li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink-soft);
+  }
+  ul.findings strong { color: var(--accent); font-weight: 600; }
+
+  /* === Table — academic minimalist === */
+  table.breakdown {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    margin: 4px 0;
+  }
+  table.breakdown thead th {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 4px 5px 3px;
+    text-align: left;
+    border-top: 0.8pt solid var(--rule);
+    border-bottom: 0.4pt solid var(--accent);  /* the only second accent use */
+  }
+  table.breakdown thead th.num { text-align: right; }
+  table.breakdown tbody td {
+    padding: 2px 5px;
+    vertical-align: top;
+    line-height: 1.3;
+    /* no row borders — academic style */
+  }
+  table.breakdown tbody td.num,
+  table.breakdown tfoot td.num {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  table.breakdown tbody td.state {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--ink);
+  }
+  table.breakdown tbody td.amt {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  table.breakdown tfoot td {
+    padding: 5px 5px 3px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    border-top: 0.4pt solid var(--rule);
+    border-bottom: 0.8pt solid var(--rule);
+  }
+  table.breakdown tfoot td.total-label {
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 9.5px;
+    color: var(--ink);
+  }
+  table.breakdown tfoot td.total-amt { color: var(--accent); font-size: 11.5px; }
+  table.breakdown .imputed { color: var(--ink-soft); font-style: italic; font-size: 9px; }
+
+  /* === Corroboration callout === */
+  .corroboration {
+    margin: 6px 0 3px;
+    padding: 5px 10px;
+    border-left: 1.5pt solid var(--accent);
+    font-family: 'Charter', 'Iowan Old Style', 'Georgia', serif;
+    font-size: 11.5px;
+    line-height: 1.38;
+    color: var(--ink);
+  }
+  .corroboration strong { color: var(--accent); font-weight: 600; }
+
+  /* === Methodology summary === */
+  .method-summary {
+    margin: 4px 0 3px;
+    font-size: 10.5px;
+    line-height: 1.34;
+    color: var(--ink);
+  }
+  .method-summary p { margin: 0; }
+
+  /* === Footer === */
+  footer.endmatter {
+    margin-top: 6px;
+    padding-top: 4px;
+    border-top: 0.3pt solid var(--rule-soft);
+    font-size: 8.5px;
+    line-height: 1.28;
+    color: var(--ink-soft);
+  }
+  footer.endmatter .label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+  }
+  footer.endmatter a { color: var(--ink-soft); text-decoration: none; }
+  footer.endmatter .row { margin-bottom: 1px; }
+
+  /* Print fidelity */
+  @media print {
+    .headline .figure { color: #1f3a5f !important; }
+    .corroboration { border-left-color: #1f3a5f !important; }
+    table.breakdown thead th { border-bottom-color: #1f3a5f !important; }
+    table.breakdown tfoot td.total-amt { color: #1f3a5f !important; }
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="title-block">
+    <p class="kicker">Taxlite Research · Report v1 · One-page summary</p>
+    <h1>At least $356.9 million in unclaimed state concessions a year — first systematic Australia-wide dollar estimate</h1>
+  </div>
+  <div class="byline">
+    <strong>Alex Jiang</strong><br>
+    19 May 2026<br>
+    <a href="mailto:research@taxlite.net">research@taxlite.net</a>
+  </div>
+</header>
+
+<div class="headline">
+  <span class="figure">$356.9M</span><span class="figure-unit">&nbsp;per year</span>
+  <p class="caption">
+    Australian households eligible for state-administered energy and water concessions leave at least AUD&nbsp;$356.9&nbsp;million on the table every year across the five National Energy Customer Framework states plus Victoria's three-utility concession cluster.
+    <span class="small">Estimate is a robust <em>lower bound</em>; see methodology notes below.</span>
+  </p>
+  <p class="vintage">
+    Based on the most recent published systematic data: CPRC's 2022 analysis of DSS Payment Demographic Data (June&nbsp;2022) and DVA Treatment Population (March&nbsp;2022) administrative records, applied at current scheme rates. No more recent systematic estimate has been published.
+  </p>
+</div>
+
+<h2 class="section">Key findings</h2>
+<ul class="findings">
+  <li><strong>More than 850,000 households across NECF states miss out on their state energy concession</strong>; the figure rises to over 1.2&nbsp;million household-concession-misses when Victoria's three utilities are counted separately. Three in every ten eligible households across the National Energy Customer Framework do not receive the energy concession they qualify for.</li>
+  <li><strong>South Australia has the highest gap (38%) and Tasmania the lowest (19%)</strong>. The NSW gap of 35% is independently corroborated by the NSW Government's own annual report at 36% — agreement within one percentage point across two independent sources.</li>
+  <li><strong>Victorian renters are three times more likely to miss out on their water concession (22%) than their electricity concession (7%)</strong>. Same eligibility, same households, three-fold difference in take-up. The discrepancy was flagged by CPRC in 2022 and remains unresolved.</li>
+</ul>
+
+<h2 class="section">State-by-state breakdown</h2>
+<table class="breakdown">
+  <thead>
+    <tr>
+      <th>Jurisdiction</th>
+      <th>Concession</th>
+      <th class="num">Eligible HH</th>
+      <th class="num">Non-receipt</th>
+      <th class="num">Per HH&nbsp;/&nbsp;yr</th>
+      <th class="num">Unclaimed&nbsp;/&nbsp;yr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="state">NSW</td>
+      <td>Low Income Household Rebate (retail)</td>
+      <td class="num">1,248,289</td>
+      <td class="num">35%</td>
+      <td class="num">$285</td>
+      <td class="num amt">$124.5M</td>
+    </tr>
+    <tr>
+      <td class="state">QLD</td>
+      <td>Electricity Rebate</td>
+      <td class="num">875,914</td>
+      <td class="num">29%</td>
+      <td class="num">$386.34</td>
+      <td class="num amt">$98.1M</td>
+    </tr>
+    <tr>
+      <td class="state">SA</td>
+      <td>Energy Bill Concession</td>
+      <td class="num">340,569</td>
+      <td class="num">38%</td>
+      <td class="num">$281.78</td>
+      <td class="num amt">$36.5M</td>
+    </tr>
+    <tr>
+      <td class="state">TAS</td>
+      <td>Annual Electricity Concession</td>
+      <td class="num">115,308</td>
+      <td class="num">19%</td>
+      <td class="num">$645.56</td>
+      <td class="num amt">$14.1M</td>
+    </tr>
+    <tr>
+      <td class="state">ACT</td>
+      <td>Utilities Concession (elec&nbsp;+&nbsp;gas&nbsp;+&nbsp;water bundled)</td>
+      <td class="num">41,407</td>
+      <td class="num">31%</td>
+      <td class="num">$800</td>
+      <td class="num amt">$10.3M</td>
+    </tr>
+    <tr>
+      <td class="state">VIC</td>
+      <td>Annual Electricity Concession (17.5% off bills)</td>
+      <td class="num">989,936</td>
+      <td class="num">7%</td>
+      <td class="num">$262.50 <span class="imputed">imputed</span></td>
+      <td class="num amt">$18.2M</td>
+    </tr>
+    <tr>
+      <td class="state">VIC</td>
+      <td>Winter Gas Concession (17.5% May–Oct)</td>
+      <td class="num">752,351</td>
+      <td class="num">12%</td>
+      <td class="num">$80 <span class="imputed">imputed</span></td>
+      <td class="num amt">$7.2M</td>
+    </tr>
+    <tr>
+      <td class="state">VIC</td>
+      <td>Water &amp; Sewerage Concession (50%, cap $372.10)</td>
+      <td class="num">871,143</td>
+      <td class="num">22%</td>
+      <td class="num">$250 <span class="imputed">imputed</span></td>
+      <td class="num amt">$47.9M</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td class="total-label" colspan="2">Total — NECF 5 states electricity + VIC 3-utility cluster</td>
+      <td class="num">3,611,423</td>
+      <td class="num">—</td>
+      <td class="num">—</td>
+      <td class="num total-amt">$356.9M</td>
+    </tr>
+  </tfoot>
+</table>
+
+<div class="corroboration">
+  <strong>Cross-source corroboration.</strong> For the NSW Low Income Household Rebate — the largest single line at $124.5M — the NSW Department of Planning and Environment's own <em>NSW Energy Rebates Annual Report 2020-21</em> independently reports a 36% non-receipt rate, within one percentage point of CPRC's 35% NECF estimate. Two independent sources — one a state government administering the rebate, the other a Victorian-funded think tank — converge on the same finding.
+</div>
+
+<h2 class="section">How this estimate was produced</h2>
+<div class="method-summary">
+  <p>Each line is computed as <em>eligible households × non-receipt rate × per-household amount</em>. Eligible household counts use CPRC's 2022 analysis of DSS Payment Demographic Data with a 0.70 multi-card adjustment derived from the Victorian Utility Consumption Household Survey. Non-receipt rates use CPRC's modelling of Australian Energy Regulator retailer reporting (NECF states) and Department of Families, Fairness and Housing administrative data (Victoria). Per-household amounts are the current official scheme rates for fixed-rate concessions, and conservatively imputed reference values for percentage-rate concessions; both are documented in the full methodology.</p>
+</div>
+
+<footer class="endmatter">
+  <div class="row">
+    <span class="label">Primary source —</span>
+    Consumer Policy Research Centre (CPRC), <em>Mind the Gap — Identifying the gap between energy concession eligibility and concessions received</em>, November 2022 (2022-11-09 update). Ben Martin Hobbs. <a href="https://cprc.org.au/report/mind-the-gap/">cprc.org.au/report/mind-the-gap</a>.
+  </div>
+  <div class="row">
+    <span class="label">Eligible population —</span>
+    Department of Social Services, <em>Payment Demographic Data</em>, June 2022 vintage (per CPRC endnote 10). Department of Veterans' Affairs <em>Treatment Population</em>, March 2022.
+  </div>
+  <div class="row">
+    <span class="label">Independent NSW corroboration —</span>
+    NSW Department of Planning and Environment, <em>NSW Energy Rebates Annual Report 2020-21</em>, p.4 (CPRC endnote 8).
+  </div>
+  <div class="row">
+    <span class="label">Scope notes —</span>
+    Federal benefits (Age Pension, JobSeeker, FTB, CRA, etc.) are <em>not</em> included; methodology differs and is documented separately. Western Australia and the Northern Territory operate outside CPRC's NECF framework and are excluded. Non-energy state concessions (transport, rates, medical) lack equivalent published gap research and are excluded.
+  </div>
+  <div class="row">
+    <span class="label">Full report and machine-readable CSV —</span>
+    <code>report/REPORT_V1.md</code>, <code>report/aggregates/headline_state_concessions.csv</code>, methodology <code>report/METHODOLOGY.md</code>. Branch <code>feature/unclaimed-report</code>.
+  </div>
+  <div class="row">
+    <span class="label">About —</span>
+    taxlite.net is an independent Australian tax and welfare research site, publisher of the Benefit Check eligibility tool. <a href="https://taxlite.net">taxlite.net</a>
+  </div>
+</footer>
+
+</body>
+</html>

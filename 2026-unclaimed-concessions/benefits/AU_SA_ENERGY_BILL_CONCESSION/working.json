@@ -1,0 +1,83 @@
+{
+  "rule_id": "AU_SA_ENERGY_BILL_CONCESSION",
+  "cluster_id": "SA Energy Bill Concession",
+  "jurisdiction": "SA",
+  "utility": "electricity",
+  "computed_at": "2026-05-19T08:08:52.083595+00:00",
+  "inputs": {
+    "amount_per_year_aud": 281.78,
+    "amount_type_label": "fixed_yearly",
+    "amount_source": "YAML rules/sa/energy.yaml → AU_SA_ENERGY_BILL_CONCESSION.amount.value (fixed yearly)",
+    "eligible_cards": 486527,
+    "eligible_households": 340569,
+    "dedup_factor": 0.7,
+    "dedup_factor_source": "CPRC Mind the Gap endnote 14, p20 — ((100/(1+x*R))+((100/(1+x*R)*R)))/100, x=2, R=42/58=0.72",
+    "unclaimed_rate": 0.38,
+    "unclaimed_rate_source": "CPRC Mind the Gap Figure 3, p11, NECF 2021-22 Q3",
+    "cprc_data_quarter": "2021-22 Q3",
+    "cprc_framework": "NECF",
+    "card_types_included": [
+      "pensioner_concession_card",
+      "health_care_card (incl. LIHCC)",
+      "dva_gold_card (generic)"
+    ]
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "eligible_cards",
+      "value": 486527,
+      "source": "CPRC Fig 2 p11 (DSS June 2022 + DVA March 2022)"
+    },
+    {
+      "step": 2,
+      "name": "eligible_households",
+      "value": 340569,
+      "formula": "eligible_cards × 0.7 (CPRC weighting)",
+      "verify": 340568.89999999997
+    },
+    {
+      "step": "2b",
+      "name": "effective_eligible_households",
+      "value": 340569,
+      "formula": "eligible_households × trigger_rate 1.0",
+      "trigger_rate_basis": "n/a (full eligible cohort)"
+    },
+    {
+      "step": 3,
+      "name": "unclaimed_households",
+      "value": 129416,
+      "formula": "effective_eligible_households × 0.38"
+    },
+    {
+      "step": 4,
+      "name": "unclaimed_total_aud",
+      "value": 36466840,
+      "formula": "unclaimed_households × $281.78"
+    }
+  ],
+  "manual_check": {
+    "expected_aud_low": 33000000,
+    "expected_aud_high": 40000000,
+    "rationale": "340,569 SA eligible households × 0.38 NECF gap × $281.78 ≈ $36.5M",
+    "actual_aud": 36466840,
+    "within_range": true
+  },
+  "sources": {
+    "cprc_citation": "Consumer Policy Research Centre (CPRC), Mind the Gap — Identifying the gap between energy concession eligibility and concessions received, November 2022. Author: Ben Martin Hobbs.",
+    "cprc_landing": "https://cprc.org.au/report/mind-the-gap/",
+    "cprc_pdf": "https://cprc.org.au/wp-content/uploads/2022/11/Mind-the-Gap_Report_Update-1011.pdf",
+    "cprc_local_pdf": "report/data/cprc/mind-the-gap-2022.pdf",
+    "dss_data_quarter": "DSS Payment Demographic Data, June 2022 (per CPRC endnote 10) + DVA Treatment Population, March 2022",
+    "dss_data_url": "https://data.gov.au/data/dataset/dss-payment-demographic-data",
+    "rule_yaml_path": "rules/sa/energy.yaml",
+    "corroboration_source": "No independent corroboration available"
+  },
+  "disclosures": [
+    "Pilot uses CPRC's already-aggregated eligible household count, not a separate DSS pull, for 100% same-quarter same-source comparability with the gap rate.",
+    "Single-rule cluster; YAML eligibility also accepts CSHC (CPRC excludes; conservative direction preserved).",
+    "0.70 dedup weighting assumes x=2 (cards per multi-card household); CPRC acknowledges 'possible, even likely, that there may be three or more' → 0.70 may overestimate households → final AUD likely underestimated (conservative).",
+    "CPRC adopted limited eligibility criteria to avoid household-level double counting → 'actual gap... may be greater' (CPRC p8).",
+    "EBRF (federal Energy Bill Relief Fund) does NOT substitute for state-level concessions. State LIHR's 35% unclaimed rate is structural take-up gap, independent of EBRF."
+  ]
+}
