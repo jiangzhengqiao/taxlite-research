@@ -25,7 +25,7 @@ Alex Jiang · research@taxlite.net · [taxlite.net](https://taxlite.net)
 
 This repository's research content is released under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0). See [LICENSE](LICENSE).
 
-Third-party source documents included for provenance (in each report's `data/` subdirectory) retain their original licenses — CPRC reports, NSW government reports, Commonwealth open data — see the respective `source.txt` files for citation and licensing detail.
+Third-party source documents included for provenance (in each report's `data/` subdirectory) retain their original licenses — CPRC's Mind the Gap report and NSW government annual report cited under fair dealing for research purposes. See the respective `source.txt` files for citation detail.
 
 ## About Taxlite
 
